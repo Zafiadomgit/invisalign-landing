@@ -882,7 +882,7 @@ export default function InvisalignLanding() {
             {/* Mapa Google */}
             <div className="flex-1 bg-white rounded-xl shadow-lg p-4 flex items-center justify-center min-h-[350px]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!4v1752633289783!6m8!1m7!1sNGkulvkFoRl8VWWYbI3JqQ!2m2!1d4.699635712931899!2d-74.05037451859113!3f340.1992919576039!4f-0.7104943214616384!5f0.4000000000000002"
+                src="https://www.google.com/maps/embed?pb=!4v1752678384410!6m8!1m7!1sNGkulvkFoRl8VWWYbI3JqQ!2m2!1d4.699635712931899!2d-74.05037451859113!3f340.2!4f-0.7099999999999937!5f0.4000000000000002"
                 width="100%"
                 height="320"
                 style={{ border: 0, borderRadius: 12, minHeight: 320 }}
