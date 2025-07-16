@@ -11,6 +11,7 @@ import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Script from "next/script";
+import { PrismaClient } from '@prisma/client'
 
 // Background video component con fallback
 function BackgroundVideo() {
