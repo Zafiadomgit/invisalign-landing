@@ -242,7 +242,7 @@ export default function InvisalignLanding() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Solicita tu Consulta
+                  Agenda tu cita
                 </a>
               </Button>
             </nav>
@@ -351,7 +351,7 @@ export default function InvisalignLanding() {
                     rel="noopener noreferrer"
                     onClick={() => setMenuOpen(false)}
                   >
-                    Solicita tu Consulta
+                    Agenda tu cita
                   </a>
                 </Button>
               </div>
@@ -385,7 +385,7 @@ export default function InvisalignLanding() {
                   size="lg"
                   className="cera-pro-black-btn bg-[#ffffff] hover:bg-[#FFB4AB] text-[#021D49] font-semibold text-lg px-8 py-6"
                 >
-                  Solicita tu Consulta
+                  Agenda tu cita
                 </Button>
                 <Button
                   size="lg"
@@ -836,7 +836,7 @@ export default function InvisalignLanding() {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        Solicita tu Consulta
+                        Agenda tu cita
                       </a>
                     </Button>
                     <Button
