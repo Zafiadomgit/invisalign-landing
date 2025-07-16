@@ -878,15 +878,15 @@ export default function InvisalignLanding() {
             {/* Mapa Google */}
             <div className="flex-1 bg-white rounded-xl shadow-lg p-4 flex items-center justify-center min-h-[350px]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!4v1752678384410!6m8!1m7!1sNGkulvkFoRl8VWWYbI3JqQ!2m2!1d4.699635712931899!2d-74.05037451859113!3f340.2!4f-0.7099999999999937!5f0.4000000000000002"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.9999999999995!2d-74.05037451859113!3d4.699635712931899!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0:0x0!2zNC42OTk2MzU3MTI5MzE4OTksLTc0LjA1MDM3NDUxODU5MTEz!5e0!3m2!1ses!2sco!4v1752678384410!5m2!1ses!2sco"
                 width="100%"
                 height="320"
-                style={{ border: 0, borderRadius: 12, minHeight: 320 }}
-                allowFullScreen
+                style="border:0; border-radius:12px; min-height:320px;"
+                allowfullscreen=""
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Cómo llegar a la clínica"
-              ></iframe>
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Cómo llegar a la clínica">
+              </iframe>
             </div>
           </div>
         </section>
