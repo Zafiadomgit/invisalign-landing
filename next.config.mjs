@@ -24,7 +24,8 @@ const nextConfig = {
               style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
               font-src 'self' https://fonts.gstatic.com;
               img-src * blob: data:;
-              connect-src *;
+              connect-src * data:;
+              media-src 'self' https://video-private-assets.canva.com data: blob:;
             `.replace(/\n/g, ""),
           },
         ],
