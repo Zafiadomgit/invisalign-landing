@@ -1,4 +1,8 @@
-[
-  "@prisma/client",
-  "prisma"
-] 
+{
+  "version": 1,
+  "plugins": [
+    "@prisma/client",
+    "@prisma/engines",
+    "prisma"
+  ]
+} 
