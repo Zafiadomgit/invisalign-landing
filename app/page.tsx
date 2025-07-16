@@ -876,12 +876,15 @@ export default function InvisalignLanding() {
           <h2 className="text-3xl font-bold mb-8 text-[#021D49] text-center">¿Cómo llegar?</h2>
           <div className="w-full max-w-3xl flex justify-center items-stretch">
             {/* Mapa OpenStreetMap */}
-            <div className="flex-1 bg-white rounded-xl shadow-lg p-4 flex items-center justify-center min-h-[350px]">
+            <div
+              className="flex-1 bg-white rounded-xl shadow-lg p-4 flex items-center justify-center"
+              style={{ minHeight: 350, height: 350, width: "100%" }}
+            >
               <iframe
                 src="https://www.openstreetmap.org/export/embed.html?bbox=-74.05237451859113%2C4.697635712931899%2C-74.04837451859113%2C4.701635712931899&layer=mapnik&marker=4.699635712931899%2C-74.05037451859113"
                 width="100%"
-                height="320"
-                style={{ border: 0, borderRadius: 12, minHeight: 320 }}
+                height="100%"
+                style={{ border: 0, borderRadius: 12, minHeight: 320, minWidth: "100%" }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
