@@ -873,12 +873,8 @@ export default function InvisalignLanding() {
         {/* Sección Cómo llegar y reseñas */}
         <Script src="https://static.elfsight.com/platform/platform.js" strategy="lazyOnload" />
         <section className="w-full flex flex-col items-center my-12">
-          <h2 className="text-3xl font-bold mb-8 text-[#021D49] text-center">¿Cómo llegar y qué opinan nuestros pacientes?</h2>
-          <div className="w-full max-w-5xl flex flex-col md:flex-row gap-8 justify-center items-stretch">
-            {/* Reseñas Google */}
-            <div className="flex-1 bg-white rounded-xl shadow-lg p-4 flex items-center justify-center min-h-[350px]">
-              <div className="elfsight-app-30587f97-25da-4979-ac2d-3eea33f2e842" data-elfsight-app-lazy></div>
-            </div>
+          <h2 className="text-3xl font-bold mb-8 text-[#021D49] text-center">¿Cómo llegar?</h2>
+          <div className="w-full max-w-3xl flex justify-center items-stretch">
             {/* Mapa Google */}
             <div className="flex-1 bg-white rounded-xl shadow-lg p-4 flex items-center justify-center min-h-[350px]">
               <iframe
@@ -894,7 +890,7 @@ export default function InvisalignLanding() {
             </div>
           </div>
         </section>
-        {/* Fin sección Cómo llegar y reseñas */}
+        {/* Fin sección Cómo llegar */}
 
         {/* Footer */}
         <footer className="relative z-10 bg-gray-900/95 backdrop-blur-md text-white py-12">
