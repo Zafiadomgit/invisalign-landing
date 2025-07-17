@@ -264,7 +264,7 @@ export default function InvisalignLanding() {
         {menuOpen && (
           <nav
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 transition-colors duration-300"
-            style={{ backdropFilter: "blur(2px)" }}
+            style={{ backdropFilter: 'blur(2px)' }}
           >
             <div
               className="relative bg-white rounded-2xl shadow-2xl flex flex-col items-center justify-center w-11/12 max-w-xs h-1/2 transition-all duration-300"
