@@ -19,8 +19,8 @@ const nextConfig = {
             value: `
               default-src 'self';
               script-src 'self' https://static.elfsight.com 'unsafe-inline' 'unsafe-eval';
-              frame-src 'self' https://www.google.com https://static.elfsight.com;
-              child-src 'self' https://www.google.com https://static.elfsight.com;
+              frame-src 'self' https://www.google.com https://static.elfsight.com https://www.openstreetmap.org;
+              child-src 'self' https://www.google.com https://static.elfsight.com https://www.openstreetmap.org;
               style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
               font-src 'self' https://fonts.gstatic.com;
               img-src * blob: data:;
