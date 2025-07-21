@@ -184,7 +184,7 @@ export default function CursoPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Agenda tu cita
+                  Agenda tu Cita
                 </a>
               </Button>
             </nav>
@@ -260,7 +260,7 @@ export default function CursoPage() {
                     rel="noopener noreferrer"
                     onClick={() => setMenuOpen(false)}
                   >
-                    Agenda tu cita
+                    Agenda tu Cita
                   </a>
                 </Button>
               </div>
