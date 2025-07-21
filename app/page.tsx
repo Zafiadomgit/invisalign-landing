@@ -11,6 +11,8 @@ import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Script from "next/script";
+import AppointmentForm from "@/components/AppointmentForm";
+import { Dialog, DialogTrigger, DialogContent, DialogTitle } from "@/components/ui/dialog";
 
 // Background video component con fallback
 function BackgroundVideo() {
@@ -236,15 +238,17 @@ export default function InvisalignLanding() {
                   Acceso
                 </a>
               )}
-              <Button asChild className="bg-[#021D49] hover:bg-[#FFB4AB] text-white hover:text-[#021D49] font-semibold">
-                <a
-                  href="https://wa.link/942se9"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Agenda tu Cita
-                </a>
-              </Button>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button asChild className="bg-[#021D49] hover:bg-[#FFB4AB] text-white hover:text-[#021D49] font-semibold">
+                    <span>Agenda tu Cita</span>
+                  </Button>
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogTitle>Agenda tu Cita</DialogTitle>
+                  <AppointmentForm />
+                </DialogContent>
+              </Dialog>
             </nav>
             {/* Hamburger Icon */}
             <button
@@ -341,19 +345,20 @@ export default function InvisalignLanding() {
                     Acceso
                   </a>
                 )}
-                <Button
-                  asChild
-                  className="bg-[#021D49] hover:bg-[#FFB4AB] text-white hover:text-[#021D49] font-semibold w-11/12 text-xl mt-2 transition-colors"
-                >
-                  <a
-                    href="https://wa.link/942se9"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    Agenda tu Cita
-                  </a>
-                </Button>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button
+                      asChild
+                      className="bg-[#021D49] hover:bg-[#FFB4AB] text-white hover:text-[#021D49] font-semibold w-11/12 text-xl mt-2 transition-colors"
+                    >
+                      <span>Agenda tu Cita</span>
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent>
+                    <DialogTitle>Agenda tu Cita</DialogTitle>
+                    <AppointmentForm />
+                  </DialogContent>
+                </Dialog>
               </div>
             </div>
           </nav>
@@ -827,18 +832,20 @@ export default function InvisalignLanding() {
                     darle la sonrisa segura que siempre ha deseado.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button
-                      size="lg"
-                      className="cera-pro-black-btn bg-[#ffffff] hover:bg-[#FFB4AB] text-[#021D49] font-semibold text-lg px-8 py-4"
-                    >
-                      <a
-                        href="https://wa.link/942se9"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Agenda tu Cita
-                      </a>
-                    </Button>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button
+                          size="lg"
+                          className="cera-pro-black-btn bg-[#ffffff] hover:bg-[#FFB4AB] text-[#021D49] font-semibold text-lg px-8 py-4"
+                        >
+                          <span>Agenda tu Cita</span>
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent>
+                        <DialogTitle>Agenda tu Cita</DialogTitle>
+                        <AppointmentForm />
+                      </DialogContent>
+                    </Dialog>
                     <Button
                       asChild
                       size="lg"
