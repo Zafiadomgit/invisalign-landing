@@ -87,41 +87,52 @@ export default function AppointmentForm({ onSuccess }: AppointmentFormProps) {
         <label className="block text-gray-700 mb-2" htmlFor="motivo">Motivo de la consulta *</label>
         <textarea id="motivo" name="motivo" required rows={2} value={formData.motivo} onChange={handleChange} className="w-full rounded-lg border border-gray-400 px-4 py-2 bg-white text-black focus:outline-none focus:ring-2 focus:ring-[#FFB4AB]" />
       </div>
-      <div>
-        <label className="block text-gray-700 mb-2" htmlFor="fecha">Fecha y hora para la cita *</label>
-        <DatePicker
-          id="fecha"
-          name="fecha"
-          selected={selectedDate}
-          onChange={(date) => {
-            setSelectedDate(date);
-            setFormData({ ...formData, fecha: date ? date.toISOString() : "" });
-          }}
-          showTimeSelect
-          timeIntervals={30}
-          timeCaption="Hora"
-          dateFormat="dd/MM/yyyy h:mm aa"
-          minDate={new Date()}
-          filterDate={(date) => {
-            // No permitir domingos
-            return date.getDay() !== 0;
-          }}
-          filterTime={(time) => {
-            if (!selectedDate) return true;
-            const day = selectedDate.getDay();
-            const hour = time.getHours();
-            // Sábado: 8am-1pm
-            if (day === 6) return hour >= 8 && hour < 13;
-            // Lunes a viernes: 8am-5pm
-            return hour >= 8 && hour < 17;
-          }}
-          placeholderText={isSunday(selectedDate || new Date()) ? "No disponible los domingos" : "Selecciona fecha y hora"}
-          disabled={isSunday(selectedDate || new Date())}
-          className="w-full rounded-lg border border-gray-400 px-4 py-2 bg-white text-black focus:outline-none focus:ring-2 focus:ring-[#FFB4AB]"
-        />
-        {selectedDate && isSunday(selectedDate) && (
-          <div className="text-red-600 text-sm mt-2">No disponible los domingos</div>
-        )}
+      <div className="flex flex-col md:flex-row gap-4 items-start">
+        <div className="flex-1 w-full">
+          <label className="block text-gray-700 mb-2" htmlFor="fecha">Fecha y hora para la cita *</label>
+          <DatePicker
+            id="fecha"
+            name="fecha"
+            selected={selectedDate}
+            onChange={(date) => {
+              setSelectedDate(date);
+              setFormData({ ...formData, fecha: date ? date.toISOString() : "" });
+            }}
+            showTimeSelect
+            timeIntervals={30}
+            timeCaption="Hora"
+            dateFormat="dd/MM/yyyy h:mm aa"
+            minDate={new Date()}
+            filterDate={(date) => {
+              // No permitir domingos
+              return date.getDay() !== 0;
+            }}
+            filterTime={(time) => {
+              if (!selectedDate) return true;
+              const day = selectedDate.getDay();
+              const hour = time.getHours();
+              // Sábado: 8am-1pm
+              if (day === 6) return hour >= 8 && hour < 13;
+              // Lunes a viernes: 8am-5pm
+              return hour >= 8 && hour < 17;
+            }}
+            placeholderText={isSunday(selectedDate || new Date()) ? "No disponible los domingos" : "Selecciona fecha y hora"}
+            disabled={isSunday(selectedDate || new Date())}
+            className="w-full rounded-lg border border-gray-400 px-4 py-2 bg-white text-black focus:outline-none focus:ring-2 focus:ring-[#FFB4AB]"
+          />
+          {selectedDate && isSunday(selectedDate) && (
+            <div className="text-red-600 text-sm mt-2">No disponible los domingos</div>
+          )}
+        </div>
+        <div className="flex-1 w-full mt-4 md:mt-0 md:ml-4 bg-gray-50 rounded-lg p-4 border border-gray-200">
+          <div className="font-semibold mb-2 text-[#021D49]">¿Qué incluye la consulta?</div>
+          <ul className="list-disc pl-5 text-gray-700 text-sm space-y-1">
+            <li>Escaneo</li>
+            <li>Valoración</li>
+            <li>algo</li>
+            <li>algo</li>
+          </ul>
+        </div>
       </div>
       <Button type="submit" disabled={isSubmitting} className="w-full bg-[#FFB4AB] text-[#021D49] hover:bg-[#021D49] hover:text-[#FFB4AB] font-semibold text-lg px-8 py-4 disabled:opacity-50 disabled:cursor-not-allowed">
         {isSubmitting ? "Agendando..." : "Agendar Cita"}
