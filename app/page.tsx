@@ -386,19 +386,20 @@ export default function InvisalignLanding() {
                 Invisalign.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  size="lg"
-                  className="cera-pro-black-btn bg-[#ffffff] hover:bg-[#FFB4AB] text-[#021D49] font-semibold text-lg px-8 py-6"
-                >
-                  Agenda tu Cita
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="cera-pro-black-btn border-gray-300 text-gray-300 hover:bg-gray-300/10 text-lg px-8 py-6 bg-transparent"
-                >
-                  Conocer Más
-                </Button>
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <Button
+                      size="lg"
+                      className="cera-pro-black-btn bg-[#ffffff] hover:bg-[#FFB4AB] text-[#021D49] font-semibold text-lg px-8 py-6"
+                    >
+                      Agenda tu Cita
+                    </Button>
+                  </DialogTrigger>
+                  <DialogContent>
+                    <DialogTitle>Agenda tu Cita</DialogTitle>
+                    <AppointmentForm />
+                  </DialogContent>
+                </Dialog>
               </div>
             </div>
           </div>
