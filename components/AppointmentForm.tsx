@@ -48,6 +48,9 @@ export default function AppointmentForm({ onSuccess }: AppointmentFormProps) {
 
   return (
     <form className="space-y-6" onSubmit={handleSubmit}>
+      <div className="mb-2 text-sm text-gray-600 text-center">
+        <strong>Agendar la consulta tiene un valor de $150.000 COP.</strong>
+      </div>
       {submitStatus === "success" && (
         <div className="mb-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg text-center">
           ¡Gracias! Tu cita ha sido agendada exitosamente. Te hemos enviado un correo de confirmación.
