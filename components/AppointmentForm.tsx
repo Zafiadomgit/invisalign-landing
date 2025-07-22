@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { addMinutes, setHours, setMinutes, isSaturday, isSunday } from "date-fns";
 import { Form, FormItem, FormLabel, FormControl, FormMessage } from "@/components/ui/form";
 import { Button } from "@/components/ui/button";
 
@@ -17,6 +20,7 @@ export default function AppointmentForm({ onSuccess }: AppointmentFormProps) {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -85,7 +89,39 @@ export default function AppointmentForm({ onSuccess }: AppointmentFormProps) {
       </div>
       <div>
         <label className="block text-gray-700 mb-2" htmlFor="fecha">Fecha y hora para la cita *</label>
-        <input id="fecha" name="fecha" type="datetime-local" required value={formData.fecha} onChange={handleChange} className="w-full rounded-lg border border-gray-400 px-4 py-2 bg-white text-black focus:outline-none focus:ring-2 focus:ring-[#FFB4AB]" />
+        <DatePicker
+          id="fecha"
+          name="fecha"
+          selected={selectedDate}
+          onChange={(date) => {
+            setSelectedDate(date);
+            setFormData({ ...formData, fecha: date ? date.toISOString() : "" });
+          }}
+          showTimeSelect
+          timeIntervals={30}
+          timeCaption="Hora"
+          dateFormat="dd/MM/yyyy h:mm aa"
+          minDate={new Date()}
+          filterDate={(date) => {
+            // No permitir domingos
+            return date.getDay() !== 0;
+          }}
+          filterTime={(time) => {
+            if (!selectedDate) return true;
+            const day = selectedDate.getDay();
+            const hour = time.getHours();
+            // Sábado: 8am-1pm
+            if (day === 6) return hour >= 8 && hour < 13;
+            // Lunes a viernes: 8am-5pm
+            return hour >= 8 && hour < 17;
+          }}
+          placeholderText={isSunday(selectedDate || new Date()) ? "No disponible los domingos" : "Selecciona fecha y hora"}
+          disabled={isSunday(selectedDate || new Date())}
+          className="w-full rounded-lg border border-gray-400 px-4 py-2 bg-white text-black focus:outline-none focus:ring-2 focus:ring-[#FFB4AB]"
+        />
+        {selectedDate && isSunday(selectedDate) && (
+          <div className="text-red-600 text-sm mt-2">No disponible los domingos</div>
+        )}
       </div>
       <Button type="submit" disabled={isSubmitting} className="w-full bg-[#FFB4AB] text-[#021D49] hover:bg-[#021D49] hover:text-[#FFB4AB] font-semibold text-lg px-8 py-4 disabled:opacity-50 disabled:cursor-not-allowed">
         {isSubmitting ? "Agendando..." : "Agendar Cita"}
