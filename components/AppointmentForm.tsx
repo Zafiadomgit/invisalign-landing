@@ -22,6 +22,40 @@ export default function AppointmentForm({ onSuccess }: AppointmentFormProps) {
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
+  const MOTIVOS = [
+    {
+      value: "primera-valoracion",
+      label: "Primera valoración",
+      precio: 150000,
+      incluye: ["Escaneo", "Valoración", "Plan de tratamiento"],
+    },
+    {
+      value: "control-tratamiento",
+      label: "Control de tratamiento",
+      precio: 80000,
+      incluye: ["Revisión", "Ajuste", "Recomendaciones"],
+    },
+    {
+      value: "urgencia",
+      label: "Urgencia",
+      precio: 100000,
+      incluye: ["Diagnóstico", "Manejo del dolor", "Recomendaciones"],
+    },
+    {
+      value: "ortodoncia-invisible",
+      label: "Ortodoncia invisible",
+      precio: 200000,
+      incluye: ["Escaneo", "Simulación", "Plan personalizado"],
+    },
+    {
+      value: "otro",
+      label: "Otro",
+      precio: 150000,
+      incluye: ["Consulta personalizada"],
+    },
+  ];
+  const [selectedMotivo, setSelectedMotivo] = useState(MOTIVOS[0]);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -52,40 +86,28 @@ export default function AppointmentForm({ onSuccess }: AppointmentFormProps) {
 
   return (
     <form className="space-y-6" onSubmit={handleSubmit}>
-      <div className="mb-2 text-sm text-gray-600 text-center">
-        <strong>Agendar la consulta tiene un valor de $150.000 COP.</strong>
-      </div>
-      {submitStatus === "success" && (
-        <div className="mb-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg text-center">
-          ¡Gracias! Tu cita ha sido agendada exitosamente. Te hemos enviado un correo de confirmación.
-        </div>
-      )}
-      {submitStatus === "error" && (
-        <div className="mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg text-center">
-          Hubo un error al agendar tu cita. Por favor, intenta nuevamente.
-        </div>
-      )}
-      <div className="flex gap-4">
-        <div className="w-1/2">
-          <label className="block text-gray-700 mb-2" htmlFor="nombre">Nombre *</label>
-          <input id="nombre" name="nombre" type="text" required value={formData.nombre} onChange={handleChange} className="w-full rounded-lg border border-gray-400 px-4 py-2 bg-white text-black focus:outline-none focus:ring-2 focus:ring-[#FFB4AB]" />
-        </div>
-        <div className="w-1/2">
-          <label className="block text-gray-700 mb-2" htmlFor="apellido">Apellido *</label>
-          <input id="apellido" name="apellido" type="text" required value={formData.apellido} onChange={handleChange} className="w-full rounded-lg border border-gray-400 px-4 py-2 bg-white text-black focus:outline-none focus:ring-2 focus:ring-[#FFB4AB]" />
-        </div>
-      </div>
-      <div>
-        <label className="block text-gray-700 mb-2" htmlFor="telefono">Teléfono *</label>
-        <input id="telefono" name="telefono" type="tel" required value={formData.telefono} onChange={handleChange} className="w-full rounded-lg border border-gray-400 px-4 py-2 bg-white text-black focus:outline-none focus:ring-2 focus:ring-[#FFB4AB]" />
-      </div>
-      <div>
-        <label className="block text-gray-700 mb-2" htmlFor="email">Email *</label>
-        <input id="email" name="email" type="email" required value={formData.email} onChange={handleChange} className="w-full rounded-lg border border-gray-400 px-4 py-2 bg-white text-black focus:outline-none focus:ring-2 focus:ring-[#FFB4AB]" />
-      </div>
+      {/* Eliminar el disclaimer de precio aquí */}
       <div>
         <label className="block text-gray-700 mb-2" htmlFor="motivo">Motivo de la consulta *</label>
-        <textarea id="motivo" name="motivo" required rows={2} value={formData.motivo} onChange={handleChange} className="w-full rounded-lg border border-gray-400 px-4 py-2 bg-white text-black focus:outline-none focus:ring-2 focus:ring-[#FFB4AB]" />
+        <div className="flex items-center gap-4">
+          <select
+            id="motivo"
+            name="motivo"
+            required
+            value={selectedMotivo.value}
+            onChange={e => {
+              const motivo = MOTIVOS.find(m => m.value === e.target.value) || MOTIVOS[0];
+              setSelectedMotivo(motivo);
+              setFormData({ ...formData, motivo: motivo.label });
+            }}
+            className="w-full rounded-lg border border-gray-400 px-4 py-2 bg-white text-black focus:outline-none focus:ring-2 focus:ring-[#FFB4AB]"
+          >
+            {MOTIVOS.map(m => (
+              <option key={m.value} value={m.value}>{m.label}</option>
+            ))}
+          </select>
+          <span className="text-[#021D49] font-semibold whitespace-nowrap">${selectedMotivo.precio.toLocaleString("es-CO")} COP</span>
+        </div>
       </div>
       <div className="flex flex-col md:flex-row gap-4 items-start">
         <div className="flex-1 w-full">
@@ -127,10 +149,9 @@ export default function AppointmentForm({ onSuccess }: AppointmentFormProps) {
         <div className="flex-1 w-full mt-4 md:mt-0 md:ml-4 bg-gray-50 rounded-lg p-4 border border-gray-200">
           <div className="font-semibold mb-2 text-[#021D49]">¿Qué incluye la consulta?</div>
           <ul className="list-disc pl-5 text-gray-700 text-sm space-y-1">
-            <li>Escaneo</li>
-            <li>Valoración</li>
-            <li>algo</li>
-            <li>algo</li>
+            {selectedMotivo.incluye.map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
           </ul>
         </div>
       </div>
