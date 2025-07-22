@@ -25,3 +25,24 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+enum EstadoCita {
+  pendiente
+  confirmada
+  cancelada
+}
+
+model Appointment {
+  id         Int      @id @default(autoincrement())
+  nombre     String
+  apellido   String
+  telefono   String
+  email      String
+  motivo     String
+  fecha      DateTime
+  precio     Int
+  estado     EstadoCita @default(pendiente)
+  recordatorioEnviado Boolean @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
