@@ -153,20 +153,20 @@ export default function AppointmentForm({ onSuccess }: AppointmentFormProps) {
               const selectedDay = selectedDate.getDate();
               const selectedMonth = selectedDate.getMonth();
               const selectedYear = selectedDate.getFullYear();
+              const hour = time.getHours();
               // Si la fecha seleccionada es hoy, solo permite horas futuras
               if (
                 selectedDay === now.getDate() &&
                 selectedMonth === now.getMonth() &&
                 selectedYear === now.getFullYear()
               ) {
-                return time.getTime() > now.getTime();
+                if (time.getTime() <= now.getTime()) return false;
               }
-              // Sábado: 8am-1pm
               const day = selectedDate.getDay();
-              const hour = time.getHours();
+              // Sábado: 8am-1pm
               if (day === 6) return hour >= 8 && hour < 13;
-              // Lunes a viernes: 8am-5pm
-              return hour >= 8 && hour < 17;
+              // Lunes a viernes: 8am-6pm
+              return hour >= 8 && hour < 18;
             }}
             placeholderText={isSunday(selectedDate || new Date()) ? "No disponible los domingos" : "Selecciona fecha y hora"}
             disabled={isSunday(selectedDate || new Date())}
