@@ -1,3 +1,4 @@
+// Forzar build Vercel - despliegue de cambios pendientes
 "use client";
 
 import TestimonialsCarousel from "@/components/testimonials-carousel";
