@@ -87,6 +87,24 @@ export default function AppointmentForm({ onSuccess }: AppointmentFormProps) {
   return (
     <form className="space-y-6" onSubmit={handleSubmit}>
       {/* Eliminar el disclaimer de precio aquí */}
+      <div className="flex gap-4">
+        <div className="w-1/2">
+          <label className="block text-gray-700 mb-2" htmlFor="nombre">Nombre *</label>
+          <input id="nombre" name="nombre" type="text" required value={formData.nombre} onChange={handleChange} className="w-full rounded-lg border border-gray-400 px-4 py-2 bg-white text-black focus:outline-none focus:ring-2 focus:ring-[#FFB4AB]" />
+        </div>
+        <div className="w-1/2">
+          <label className="block text-gray-700 mb-2" htmlFor="apellido">Apellido *</label>
+          <input id="apellido" name="apellido" type="text" required value={formData.apellido} onChange={handleChange} className="w-full rounded-lg border border-gray-400 px-4 py-2 bg-white text-black focus:outline-none focus:ring-2 focus:ring-[#FFB4AB]" />
+        </div>
+      </div>
+      <div>
+        <label className="block text-gray-700 mb-2" htmlFor="telefono">Teléfono *</label>
+        <input id="telefono" name="telefono" type="tel" required value={formData.telefono} onChange={handleChange} className="w-full rounded-lg border border-gray-400 px-4 py-2 bg-white text-black focus:outline-none focus:ring-2 focus:ring-[#FFB4AB]" />
+      </div>
+      <div>
+        <label className="block text-gray-700 mb-2" htmlFor="email">Email *</label>
+        <input id="email" name="email" type="email" required value={formData.email} onChange={handleChange} className="w-full rounded-lg border border-gray-400 px-4 py-2 bg-white text-black focus:outline-none focus:ring-2 focus:ring-[#FFB4AB]" />
+      </div>
       <div>
         <label className="block text-gray-700 mb-2" htmlFor="motivo">Motivo de la consulta *</label>
         <div className="flex items-center gap-4">
