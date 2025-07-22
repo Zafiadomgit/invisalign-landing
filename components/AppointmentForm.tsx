@@ -118,7 +118,7 @@ export default function AppointmentForm({ onSuccess }: AppointmentFormProps) {
               setSelectedMotivo(motivo);
               setFormData({ ...formData, motivo: motivo.label });
             }}
-            className="w-full rounded-lg border border-gray-400 px-4 py-2 bg-white text-black focus:outline-none focus:ring-2 focus:ring-[#FFB4AB]"
+            className="w-full rounded-lg border border-gray-400 px-4 py-2 bg-white text-black focus:outline-none focus:ring-2 focus:ring-[#FFB4AB] focus-visible:outline-none invalid:border-red-400"
           >
             {MOTIVOS.map(m => (
               <option key={m.value} value={m.value}>{m.label}</option>
@@ -149,9 +149,21 @@ export default function AppointmentForm({ onSuccess }: AppointmentFormProps) {
             }}
             filterTime={(time) => {
               if (!selectedDate) return true;
+              const now = new Date();
+              const selectedDay = selectedDate.getDate();
+              const selectedMonth = selectedDate.getMonth();
+              const selectedYear = selectedDate.getFullYear();
+              // Si la fecha seleccionada es hoy, solo permite horas futuras
+              if (
+                selectedDay === now.getDate() &&
+                selectedMonth === now.getMonth() &&
+                selectedYear === now.getFullYear()
+              ) {
+                return time.getTime() > now.getTime();
+              }
+              // Sábado: 8am-1pm
               const day = selectedDate.getDay();
               const hour = time.getHours();
-              // Sábado: 8am-1pm
               if (day === 6) return hour >= 8 && hour < 13;
               // Lunes a viernes: 8am-5pm
               return hour >= 8 && hour < 17;
