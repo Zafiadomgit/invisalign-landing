@@ -3,6 +3,7 @@ import './globals.css'
 import SessionProviderWrapper from "@/components/SessionProviderWrapper";
 import React from 'react';
 import Script from "next/script";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: 'Monica Botero IPS',
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SessionProviderWrapper>
           {children}
         </SessionProviderWrapper>
+        <SpeedInsights />
       </body>
     </html>
   );
