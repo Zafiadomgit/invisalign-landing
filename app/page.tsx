@@ -419,7 +419,7 @@ export default function InvisalignLanding() {
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-6">
-              <Card className="bg-[#021D49] border-gray-600">
+              <Card className="bg-squares border-gray-600">
                 <CardContent className="p-6">
                   <div className="aspect-square relative mb-4 overflow-hidden rounded-lg">
                     <Image
@@ -438,7 +438,7 @@ export default function InvisalignLanding() {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="bg-[#021D49] border-gray-600">
+              <Card className="bg-squares border-gray-600">
                 <CardContent className="p-6">
                   <div className="aspect-square relative mb-4 overflow-hidden rounded-lg">
                     <Image
@@ -457,7 +457,7 @@ export default function InvisalignLanding() {
                   </p>
                 </CardContent>
               </Card>
-              <Card className="bg-[#021D49] border-gray-600">
+              <Card className="bg-squares border-gray-600">
                 <CardContent className="p-6">
                   <div className="aspect-square relative mb-4 overflow-hidden rounded-lg">
                     <Image
@@ -490,7 +490,7 @@ export default function InvisalignLanding() {
             </div>
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="relative flex flex-col items-center">
-                <Card className="bg-[#021D49] border-gray-600 p-4">
+                <Card className="bg-squares border-gray-600 p-4">
                   <Image
                     src="/img/l (28 de 65).JPG"
                     alt="Doctora Mónica Botero - Especialista en Ortodoncia"
@@ -516,7 +516,7 @@ export default function InvisalignLanding() {
                 </div>
               </div>
               <div className="space-y-6">
-                <Card className="bg-[#021D49] border-gray-600">
+                <Card className="bg-squares border-gray-600">
                   <CardContent className="p-8">
                     <div className="space-y-4">
                       <div className="flex items-center space-x-3 mb-4">
@@ -609,7 +609,7 @@ export default function InvisalignLanding() {
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-8 items-stretch">
-              <Card className="bg-[#021D49] border-gray-600 h-full">
+              <Card className="bg-squares border-gray-600 h-full">
                 <CardContent className="p-8 text-center flex flex-col justify-between h-full">
                   <div className="flex flex-col items-center">
                     <div className="w-16 h-16 bg-[#FFB4AB]/70 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -647,7 +647,7 @@ export default function InvisalignLanding() {
                   </div>
                 </CardContent>
               </Card>
-              <Card className="bg-[#021D49] border-gray-600 h-full">
+              <Card className="bg-squares border-gray-600 h-full">
                 <CardContent className="p-8 text-center flex flex-col justify-between h-full">
                   <div className="flex flex-col items-center">
                     <div className="w-16 h-16 bg-[#FFB4AB]/70 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -686,7 +686,7 @@ export default function InvisalignLanding() {
                   </div>
                 </CardContent>
               </Card>
-              <Card className="bg-[#021D49] border-gray-600 h-full">
+              <Card className="bg-squares border-gray-600 h-full">
                 <CardContent className="p-8 text-center flex flex-col justify-between h-full">
                   <div className="flex flex-col items-center">
                     <div className="w-16 h-16 bg-[#FFB4AB]/70 rounded-full flex items-center justify-center mx-auto mb-6">
@@ -760,9 +760,9 @@ export default function InvisalignLanding() {
               ].map((item, index) => (
                 <Card
                   key={index}
-                  className="bg-[#021D49] border-gray-600 overflow-hidden"
+                  className="bg-squares border-gray-600 overflow-hidden"
                 >
-                  <div className="w-full mx-auto h-56 relative flex items-center justify-center bg-[#021D49] rounded-lg overflow-hidden py-10 px-4">
+                  <div className="w-full mx-auto h-56 relative flex items-center justify-center bg-squares rounded-lg overflow-hidden py-10 px-4">
                     <Image
                       src={item.before}
                       alt={`Before Invisalign treatment ${index + 1}`}
@@ -774,7 +774,7 @@ export default function InvisalignLanding() {
                       Antes
                     </div>
                   </div>
-                  <div className="w-full mx-auto h-56 relative flex items-center justify-center bg-[#021D49] rounded-lg overflow-hidden py-10 px-4">
+                  <div className="w-full mx-auto h-56 relative flex items-center justify-center bg-squares rounded-lg overflow-hidden py-10 px-4">
                     <Image
                       src={item.after}
                       alt={`After Invisalign treatment ${index + 1}`}

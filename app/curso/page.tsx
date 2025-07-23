@@ -303,7 +303,7 @@ export default function CursoPage() {
             </div>
 
             {/* Formulario de inscripción */}
-            <div className="max-w-2xl mx-auto bg-[#021D49] border border-gray-600 rounded-xl p-8 mb-16 shadow-lg">
+            <div className="max-w-2xl mx-auto bg-squares border border-gray-600 rounded-xl p-8 mb-16 shadow-lg">
               <h2 className="cera-pro text-2xl text-white mb-6 text-center">Formulario de Inscripción</h2>
               
               {submitStatus === 'success' && (
@@ -409,25 +409,25 @@ export default function CursoPage() {
             <div className="max-w-3xl mx-auto mb-16">
               <h2 className="cera-pro text-2xl text-white mb-6 text-center">Preguntas Frecuentes</h2>
               <div className="space-y-4">
-                <div className="bg-[#021D49] border border-gray-600 rounded-lg">
+                <div className="bg-squares border border-gray-600 rounded-lg">
                   <details className="p-6 cursor-pointer">
                     <summary className="cera-pro-black text-lg text-white mb-2">¿Qué es Invisalign® y cómo funciona?</summary>
                     <p className="text-gray-300 mt-2">Es un sistema de ortodoncia invisible con alineadores transparentes que mueven tus dientes de forma gradual y cómoda, sin brackets ni alambres.</p>
                   </details>
                 </div>
-                <div className="bg-[#021D49] border border-gray-600 rounded-lg">
+                <div className="bg-squares border border-gray-600 rounded-lg">
                   <details className="p-6 cursor-pointer">
                     <summary className="cera-pro-black text-lg text-white mb-2">¿Cuánto dura el tratamiento?</summary>
                     <p className="text-gray-300 mt-2">La duración depende de cada caso, pero suele ser más corta que la ortodoncia tradicional. Muchos pacientes ven resultados en menos de 12 meses.</p>
                   </details>
                 </div>
-                <div className="bg-[#021D49] border border-gray-600 rounded-lg">
+                <div className="bg-squares border border-gray-600 rounded-lg">
                   <details className="p-6 cursor-pointer">
                     <summary className="cera-pro-black text-lg text-white mb-2">¿Es doloroso el tratamiento?</summary>
                     <p className="text-gray-300 mt-2">No, los alineadores ejercen fuerzas suaves y controladas, por lo que el tratamiento es mucho más cómodo y menos doloroso que los brackets convencionales.</p>
                   </details>
                 </div>
-                <div className="bg-[#021D49] border border-gray-600 rounded-lg">
+                <div className="bg-squares border border-gray-600 rounded-lg">
                   <details className="p-6 cursor-pointer">
                     <summary className="cera-pro-black text-lg text-white mb-2">¿Puedo comer y cepillarme normalmente?</summary>
                     <p className="text-gray-300 mt-2">Sí, los alineadores son removibles, lo que te permite comer, beber y cepillarte los dientes sin restricciones.</p>
@@ -457,7 +457,7 @@ export default function CursoPage() {
             </div>
             {/* Ventajas de Invisalign */}
             <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 mb-16">
-              <Card className="bg-[#021D49] border-gray-600">
+              <Card className="bg-squares border-gray-600">
                 <CardContent className="p-8">
                   <h2 className="cera-pro text-2xl text-white mb-4">Ventajas de Invisalign®</h2>
                   <ul className="text-gray-300 text-lg space-y-2 list-disc list-inside">
@@ -470,7 +470,7 @@ export default function CursoPage() {
                   </ul>
                 </CardContent>
               </Card>
-              <Card className="bg-[#021D49] border-gray-600">
+              <Card className="bg-squares border-gray-600">
                 <CardContent className="p-8">
                   <h2 className="cera-pro text-2xl text-white mb-4">¿Por qué elegir Invisalign®?</h2>
                   <ul className="text-gray-300 text-lg space-y-2 list-disc list-inside">
@@ -487,19 +487,19 @@ export default function CursoPage() {
             <div className="max-w-4xl mx-auto mb-16">
               <h2 className="cera-pro text-2xl text-white mb-6 text-center">Tipos de Invisalign®</h2>
               <div className="grid md:grid-cols-3 gap-8">
-                <Card className="bg-[#021D49] border-gray-600">
+                <Card className="bg-squares border-gray-600">
                   <CardContent className="p-6 text-center">
                     <h3 className="cera-pro-black text-xl text-white mb-2">Invisalign® First</h3>
                     <p className="text-gray-300">Ideal para niñ@s de 5 a 10 años. Corrige problemas tempranos y guía el desarrollo dental.</p>
                   </CardContent>
                 </Card>
-                <Card className="bg-[#021D49] border-gray-600">
+                <Card className="bg-squares border-gray-600">
                   <CardContent className="p-6 text-center">
                     <h3 className="cera-pro-black text-xl text-white mb-2">Invisalign® Teens</h3>
                     <p className="text-gray-300">Para jóvenes y adolescentes de 9 a 21 años. Discreto, cómodo y compatible con su estilo de vida.</p>
                   </CardContent>
                 </Card>
-                <Card className="bg-[#021D49] border-gray-600">
+                <Card className="bg-squares border-gray-600">
                   <CardContent className="p-6 text-center">
                     <h3 className="cera-pro-black text-xl text-white mb-2">Invisalign® Adultos</h3>
                     <p className="text-gray-300">Para adultos de 22 años en adelante. Solución estética y eficaz para cualquier grado de dificultad.</p>

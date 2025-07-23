@@ -92,3 +92,12 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Fondo azul con imagen superpuesta para cuadros */
+.bg-squares {
+  background-color: #021D49;
+  background-image: url('/img/FondoSquares.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
