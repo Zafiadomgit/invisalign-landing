@@ -879,19 +879,16 @@ export default function InvisalignLanding() {
         </section>
 
         {/* Sección Cómo llegar (Google Maps) */}
-        <section className="relative z-20 w-full flex flex-col items-center my-12 bg-white py-8" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.08)' }}>
+        <section className="w-full flex flex-col items-center my-12">
           <h2 className="text-3xl font-bold mb-8 text-[#021D49] text-center">¿Cómo llegar?</h2>
           <div className="w-full max-w-3xl flex justify-center items-stretch">
-            <div
-              className="flex-1 rounded-xl shadow-lg p-4 flex items-center justify-center bg-white"
-              style={{ minHeight: 350, height: 350, width: "100%" }}
-            >
+            <div style={{ minHeight: 350, height: 350, width: "100%" }}>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3003.1248476337564!2d-74.05240986424162!3d4.699771746850838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9ab6f6baeec5%3A0x81c1c4dc9b1d1094!2sDoctora%20M%C3%B3nica%20Botero!5e0!3m2!1ses-419!2sco!4v1753237717119!5m2!1ses-419!2sco"
                 width="100%"
                 height="100%"
-                style={{ border: 0, borderRadius: 12, minHeight: 320, minWidth: "100%" }}
-                allowFullScreen
+                style={{ border: 0, minHeight: 320, minWidth: "100%" }}
+                allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Cómo llegar a la clínica"
