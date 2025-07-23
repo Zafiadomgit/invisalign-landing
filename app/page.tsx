@@ -878,18 +878,16 @@ export default function InvisalignLanding() {
           </div>
         </section>
 
-        {/* Sección Cómo llegar y reseñas */}
-        <Script src="https://static.elfsight.com/platform/platform.js" strategy="lazyOnload" />
+        {/* Sección Cómo llegar (Google Maps) */}
         <section className="w-full flex flex-col items-center my-12">
           <h2 className="text-3xl font-bold mb-8 text-[#021D49] text-center">¿Cómo llegar?</h2>
           <div className="w-full max-w-3xl flex justify-center items-stretch">
-            {/* Mapa OpenStreetMap - Forzando redeploy */}
             <div
               className="flex-1 bg-white rounded-xl shadow-lg p-4 flex items-center justify-center"
               style={{ minHeight: 350, height: 350, width: "100%" }}
             >
               <iframe
-                src="https://www.openstreetmap.org/export/embed.html?bbox=-74.05237451859113%2C4.697635712931899%2C-74.04837451859113%2C4.701635712931899&layer=mapnik&marker=4.699635712931899%2C-74.05037451859113"
+                src="https://www.google.com/maps/embed?pb=!4v1753236469145!6m8!1m7!1sbIIYKjO9RCOm19w6WfmiTw!2m2!1d4.699654283017706!2d-74.05046200966915!3f6.090849930480366!4f12.027339366858541!5f0.7820865974627469"
                 width="100%"
                 height="100%"
                 style={{ border: 0, borderRadius: 12, minHeight: 320, minWidth: "100%" }}
@@ -901,7 +899,6 @@ export default function InvisalignLanding() {
             </div>
           </div>
         </section>
-        {/* Fin sección Cómo llegar */}
 
         {/* Footer */}
         <footer className="relative z-10 bg-gray-900/95 backdrop-blur-md text-white py-12">
