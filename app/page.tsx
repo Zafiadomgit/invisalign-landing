@@ -880,21 +880,19 @@ export default function InvisalignLanding() {
         </section>
 
         {/* Sección Cómo llegar (Google Maps) */}
-        <section className="w-full flex flex-col items-center my-12">
+        <section className="w-full flex flex-col items-center my-12" style={{ background: "#fff" }}>
           <h2 className="text-3xl font-bold mb-8 text-[#021D49] text-center">¿Cómo llegar?</h2>
-          <div className="w-full max-w-3xl flex justify-center items-stretch">
-            <div style={{ minHeight: 350, height: 350, width: "100%" }}>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3003.1248476337564!2d-74.05240986424162!3d4.699771746850838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9ab6f6baeec5%3A0x81c1c4dc9b1d1094!2sDoctora%20M%C3%B3nica%20Botero!5e0!3m2!1ses-419!2sco!4v1753237717119!5m2!1ses-419!2sco"
-                width="100%"
-                height="100%"
-                style={{ border: 0, minHeight: 320, minWidth: "100%" }}
-                allowFullScreen={true}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Cómo llegar a la clínica"
-              ></iframe>
-            </div>
+          <div style={{ width: "100%", maxWidth: 1200, minHeight: 350, height: 350, boxShadow: "0 2px 16px #0002", borderRadius: 16, overflow: "hidden" }}>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3003.1248476337564!2d-74.05240986424162!3d4.699771746850838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9ab6f6baeec5%3A0x81c1c4dc9b1d1094!2sDoctora%20M%C3%B3nica%20Botero!5e0!3m2!1ses-419!2sco!4v1753237717119!5m2!1ses-419!2sco"
+              width="100%"
+              height="100%"
+              style={{ border: 0, minHeight: 350, minWidth: "100%" }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Cómo llegar a la clínica"
+            ></iframe>
           </div>
         </section>
 
