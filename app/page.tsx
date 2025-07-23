@@ -595,133 +595,70 @@ export default function InvisalignLanding() {
           </div>
         </section>
 
-        {/* How Invisalign Works */}
-        <section id="treatment" className="relative z-10 py-16 md:py-24">
+        {/* Especialidades */}
+        <section className="relative z-10 py-16 md:py-24">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <h2 className="cera-pro text-3xl md:text-4xl text-white mb-4">
-                Cómo Funciona Invisalign
+                Especialidades
               </h2>
               <p className="ghuten-bloost text-xl text-gray-300 max-w-3xl mx-auto">
-                Experimente el revolucionario sistema de alineadores
-                transparentes que arregla los dientes sin ortodoncia metálica
-                tradicional.
+                Conozca nuestras áreas de experiencia para transformar su salud y sonrisa.
               </p>
             </div>
-            <div className="grid md:grid-cols-3 gap-8 items-stretch">
-              <Card className="bg-squares border-gray-600 h-full">
-                <CardContent className="p-8 text-center flex flex-col justify-between h-full">
-                  <div className="flex flex-col items-center">
-                    <div className="w-16 h-16 bg-[#FFB4AB]/70 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <span className="cera-pro text-2xl text-[#021D49]">
-                        1
-                      </span>
-                    </div>
-                    <h3 className="cera-pro-medium text-xl text-white mb-4">
-                      Consulta y Escaneo
-                    </h3>
-                    <p className="ghuten-bloost text-gray-300 leading-relaxed mb-6 flex-grow">
-                      Examinaremos sus dientes y crearemos un escaneo 3D preciso
-                      para diseñar su plan de tratamiento personalizado.
-                    </p>
+            <div className="grid md:grid-cols-3 gap-6">
+              <Card className="bg-squares border-gray-600">
+                <CardContent className="p-6">
+                  <div className="aspect-square relative mb-4 overflow-hidden rounded-lg">
+                    <Image
+                      src="/placeholder.svg?height=400&width=400"
+                      alt="Cirugía"
+                      fill
+                      className="object-cover hover:scale-105 transition-transform"
+                    />
                   </div>
-                  <div className="aspect-video relative rounded-lg overflow-hidden">
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-full h-full object-cover"
-                    >
-                      <source
-                        src="/video/Escaneo_1_mov.mov"
-                        type="video/mp4"
-                      />
-                      <Image
-                        src="/placeholder.svg?height=200&width=300"
-                        alt="Invisalign scanning process"
-                        fill
-                        className="object-cover"
-                      />
-                    </video>
-                  </div>
+                  <h3 className="navbar-guthen cera-pro-medium text-xl text-white mb-2">
+                    Cirugía
+                  </h3>
+                  <p className="ghuten-bloost text-gray-300">
+                    Procedimientos quirúrgicos avanzados para resolver problemas dentales complejos y mejorar la funcionalidad y estética bucal.
+                  </p>
                 </CardContent>
               </Card>
-              <Card className="bg-squares border-gray-600 h-full">
-                <CardContent className="p-8 text-center flex flex-col justify-between h-full">
-                  <div className="flex flex-col items-center">
-                    <div className="w-16 h-16 bg-[#FFB4AB]/70 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <span className="cera-pro text-2xl text-[#021D49]">
-                        2
-                      </span>
-                    </div>
-                    <h3 className="cera-pro-medium text-xl text-white mb-4">
-                      Alineadores Personalizados
-                    </h3>
-                    <p className="ghuten-bloost text-gray-300 leading-relaxed mb-6 flex-grow">
-                      Reciba su serie de alineadores transparentes hechos a
-                      medida, diseñados específicamente para la transformación
-                      única de su sonrisa.
-                    </p>
+              <Card className="bg-squares border-gray-600">
+                <CardContent className="p-6">
+                  <div className="aspect-square relative mb-4 overflow-hidden rounded-lg">
+                    <Image
+                      src="/placeholder.svg?height=400&width=400"
+                      alt="Rehabilitación"
+                      fill
+                      className="object-cover hover:scale-105 transition-transform"
+                    />
                   </div>
-                  <div className="aspect-video relative rounded-lg overflow-hidden">
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-full h-full object-cover"
-                    >
-                      <source
-                        src="/video/Alineadores%20personalisados.mov"
-                        type="video/mp4"
-                      />
-                      <Image
-                        src="/placeholder.svg?height=200&width=300"
-                        alt="Custom Invisalign aligners"
-                        fill
-                        className="object-cover"
-                      />
-                    </video>
-                  </div>
+                  <h3 className="navbar-guthen text-xl text-white mb-2">
+                    Rehabilitación
+                  </h3>
+                  <p className="ghuten-bloost text-gray-300">
+                    Restauración integral de dientes y encías para devolver la función, salud y belleza a tu sonrisa.
+                  </p>
                 </CardContent>
               </Card>
-              <Card className="bg-squares border-gray-600 h-full">
-                <CardContent className="p-8 text-center flex flex-col justify-between h-full">
-                  <div className="flex flex-col items-center">
-                    <div className="w-16 h-16 bg-[#FFB4AB]/70 rounded-full flex items-center justify-center mx-auto mb-6">
-                      <span className="cera-pro text-2xl text-[#021D49]">
-                        3
-                      </span>
-                    </div>
-                    <h3 className="cera-pro-medium text-xl text-white mb-4">
-                      Resultados Hermosos
-                    </h3>
-                    <p className="ghuten-bloost text-gray-300 leading-relaxed mb-6 flex-grow">
-                      Use sus alineadores de 16 a 22 horas diarias y observe
-                      cómo su sonrisa se transforma gradual y cómodamente.
-                    </p>
+              <Card className="bg-squares border-gray-600">
+                <CardContent className="p-6">
+                  <div className="aspect-square relative mb-4 overflow-hidden rounded-lg">
+                    <Image
+                      src="/img/invisalign-before-after_1_Isabella.png"
+                      alt="Ortodoncia invisible"
+                      fill
+                      className="object-cover hover:scale-105 transition-transform"
+                    />
                   </div>
-                  <div className="aspect-video relative rounded-lg overflow-hidden">
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-full h-full object-cover"
-                    >
-                      <source
-                        src="https://video-private-assets.canva.com/VAFlbJl7MZQ/v/112d5d0bf4.mp4?exp=1752008940000&cf-ck=lrO0-Tayf_aVJUIjP75aAqU19KvUrlTIOtXBgpxVhvg&cf-sig=hlzmRMrFmPF8ZCWsSk0i2NMtHwdNTObD2qiQg2nx90A&cf-sig-kid=CO7cCjZ_YiI=&sig=8SReBTvIXWwuvOGkPzRy43CC4FtsfZYt3VEyVRtdG7s&sig-kid=GzFgFdhXD-Q="
-                        type="video/mp4"
-                      />
-                      <Image
-                        src="/placeholder.svg?height=200&width=300"
-                        alt="Invisalign results"
-                        fill
-                        className="object-cover"
-                      />
-                    </video>
-                  </div>
+                  <h3 className="navbar-guthen text-xl text-white mb-2">
+                    Ortodoncia invisible
+                  </h3>
+                  <p className="ghuten-bloost text-gray-300">
+                    Corrección de la posición dental con alineadores transparentes, logrando resultados estéticos y funcionales de manera discreta y cómoda.
+                  </p>
                 </CardContent>
               </Card>
             </div>
