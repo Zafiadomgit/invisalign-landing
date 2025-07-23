@@ -1,3 +1,4 @@
+// Prueba de commit para forzar build en Vercel
 "use client";
 
 import TestimonialsCarousel from "@/components/testimonials-carousel";
