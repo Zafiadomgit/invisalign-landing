@@ -879,11 +879,11 @@ export default function InvisalignLanding() {
         </section>
 
         {/* Sección Cómo llegar (Google Maps) */}
-        <section className="w-full flex flex-col items-center my-12">
+        <section className="relative z-20 w-full flex flex-col items-center my-12 bg-white py-8" style={{ boxShadow: '0 2px 16px rgba(0,0,0,0.08)' }}>
           <h2 className="text-3xl font-bold mb-8 text-[#021D49] text-center">¿Cómo llegar?</h2>
           <div className="w-full max-w-3xl flex justify-center items-stretch">
             <div
-              className="flex-1 bg-white rounded-xl shadow-lg p-4 flex items-center justify-center"
+              className="flex-1 rounded-xl shadow-lg p-4 flex items-center justify-center bg-white"
               style={{ minHeight: 350, height: 350, width: "100%" }}
             >
               <iframe
