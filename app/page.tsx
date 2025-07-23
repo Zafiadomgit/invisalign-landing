@@ -899,7 +899,7 @@ export default function InvisalignLanding() {
             </div>
             {/* Widget de reviews */}
             <div style={{ minHeight: 350, height: 350, position: "relative", zIndex: 10, display: "flex", alignItems: "center", justifyContent: "center" }}>
-              <script src="https://static.elfsight.com/platform/platform.js" async></script>
+              <Script src="https://static.elfsight.com/platform/platform.js" strategy="lazyOnload" />
               <div className="elfsight-app-30587f97-25da-4979-ac2d-3eea33f2e842" data-elfsight-app-lazy></div>
             </div>
           </div>
