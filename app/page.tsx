@@ -762,25 +762,27 @@ export default function InvisalignLanding() {
                   key={index}
                   className="bg-squares border-gray-600 overflow-hidden"
                 >
-                  <div className="w-full mx-auto h-56 relative flex items-center justify-center bg-squares rounded-lg overflow-hidden py-10 px-4">
+                  <div className="w-full mx-auto h-72 relative flex items-center justify-center bg-squares rounded-lg overflow-hidden py-4 px-2">
                     <Image
                       src={item.before}
                       alt={`Before Invisalign treatment ${index + 1}`}
-                      width={320}
-                      height={180}
-                      className="object-contain max-w-[98%] max-h-full mx-auto"
+                      width={420}
+                      height={320}
+                      className="object-contain max-w-full max-h-full mx-auto"
+                      style={{ width: "90%", height: "90%" }}
                     />
                     <div className="absolute bottom-2 left-2 bg-gray-900/80 text-white text-xs px-2 py-1 rounded">
                       Antes
                     </div>
                   </div>
-                  <div className="w-full mx-auto h-56 relative flex items-center justify-center bg-squares rounded-lg overflow-hidden py-10 px-4">
+                  <div className="w-full mx-auto h-72 relative flex items-center justify-center bg-squares rounded-lg overflow-hidden py-4 px-2">
                     <Image
                       src={item.after}
                       alt={`After Invisalign treatment ${index + 1}`}
-                      width={320}
-                      height={180}
-                      className="object-contain max-w-[98%] max-h-full mx-auto"
+                      width={420}
+                      height={320}
+                      className="object-contain max-w-full max-h-full mx-auto"
+                      style={{ width: "90%", height: "90%" }}
                     />
                     <div className="absolute bottom-2 right-2 bg-[#FFB4AB]/80 text-[#021D49] text-xs px-2 py-1 rounded">
                       Después
@@ -879,18 +881,28 @@ export default function InvisalignLanding() {
           </div>
         </section>
 
-        {/* Sección Cómo llegar (Google Maps) */}
-        <section style={{ width: "100%", minHeight: 350, height: 350, position: "relative", zIndex: 10, background: "#fff" }}>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3003.1248476337564!2d-74.05240986424162!3d4.699771746850838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9ab6f6baeec5%3A0x81c1c4dc9b1d1094!2sDoctora%20M%C3%B3nica%20Botero!5e0!3m2!1ses-419!2sco!4v1753237717119!5m2!1ses-419!2sco"
-            width="100%"
-            height="100%"
-            style={{ border: 0, minHeight: 350, minWidth: "100%", display: "block" }}
-            allowFullScreen={true}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Cómo llegar a la clínica"
-          ></iframe>
+        {/* Sección Cómo llegar (Google Maps + Reviews) */}
+        <section className="w-full flex flex-col items-center my-12" style={{ background: "#fff" }}>
+          <div className="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch" style={{ minHeight: 350 }}>
+            {/* Mapa Google Maps */}
+            <div style={{ minHeight: 350, height: 350, position: "relative", zIndex: 10 }}>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3003.1248476337564!2d-74.05240986424162!3d4.699771746850838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9ab6f6baeec5%3A0x81c1c4dc9b1d1094!2sDoctora%20M%C3%B3nica%20Botero!5e0!3m2!1ses-419!2sco!4v1753237717119!5m2!1ses-419!2sco"
+                width="100%"
+                height="100%"
+                style={{ border: 0, minHeight: 350, minWidth: "100%", display: "block", borderRadius: 16 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Cómo llegar a la clínica"
+              ></iframe>
+            </div>
+            {/* Widget de reviews */}
+            <div style={{ minHeight: 350, height: 350, position: "relative", zIndex: 10, display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <script src="https://static.elfsight.com/platform/platform.js" async></script>
+              <div className="elfsight-app-30587f97-25da-4979-ac2d-3eea33f2e842" data-elfsight-app-lazy></div>
+            </div>
+          </div>
         </section>
 
         {/* Footer */}
