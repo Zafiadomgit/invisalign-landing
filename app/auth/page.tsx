@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
@@ -35,6 +35,13 @@ export default function AuthPage() {
   const [keepLogged, setKeepLogged] = useState(true);
   const router = useRouter();
   const { data: session, status } = useSession();
+
+  // Redirigir a /admin si el usuario es admin
+  useEffect(() => {
+    if (session && session.user && (session.user as any).role === "admin") {
+      router.replace("/admin");
+    }
+  }, [session, router]);
 
   // Registro personalizado
   async function handleRegister(e: React.FormEvent) {
