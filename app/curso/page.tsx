@@ -647,7 +647,8 @@ export default function CursoPage() {
             <div className="border-t border-gray-600/30 mt-8 pt-8 text-center text-gray-400">
               <p className="ghuten-bloost">
                 &copy; 2024 IPS Mónica Botero S.A.S. Todos los derechos
-                reservados.
+                reservados.<br />
+                <span className="text-gray-400 text-xs block mt-1">Creado por David Pieters</span>
               </p>
             </div>
           </div>
