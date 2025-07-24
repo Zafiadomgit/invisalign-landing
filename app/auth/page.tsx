@@ -9,6 +9,8 @@ import { Button } from "@/components/ui/button";
 import { Select } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { PasswordInput } from "@/components/ui/password-input";
+import { useSession, signOut } from "next-auth/react";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function AuthPage() {
   const [tab, setTab] = useState("login");
@@ -32,6 +34,7 @@ export default function AuthPage() {
   const [resetMsg, setResetMsg] = useState("");
   const [keepLogged, setKeepLogged] = useState(true);
   const router = useRouter();
+  const { data: session, status } = useSession();
 
   // Registro personalizado
   async function handleRegister(e: React.FormEvent) {
@@ -81,6 +84,44 @@ export default function AuthPage() {
       setSuccess("¡Bienvenido!");
       router.push("/");
     }
+  }
+
+  // Si el usuario está autenticado, mostrar dashboard
+  if (session && session.user) {
+    const nombre = (session.user as any).nombre || session.user.name || "Paciente";
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-[#021D49]">
+        <Card className="bg-white rounded-xl shadow-lg p-8 w-full max-w-md">
+          <CardContent>
+            <h2 className="cera-pro text-2xl text-center mb-6 text-[#021D49]">
+              ¡Hola, {nombre}! Nos alegra verte de nuevo <span role="img" aria-label="sonrisa">😁</span>
+            </h2>
+            {/* Aquí irá la info de la cita y el pago */}
+            <div className="space-y-4 mb-6">
+              <div className="bg-gray-100 rounded-lg p-4 text-[#021D49]">
+                <div className="font-bold mb-1">Estado de tu pago:</div>
+                <div className="text-lg">(Aquí irá el estado del pago)</div>
+              </div>
+              <div className="bg-gray-100 rounded-lg p-4 text-[#021D49]">
+                <div className="font-bold mb-1">Tu cita:</div>
+                <div className="text-lg">(Aquí irán los detalles de la cita: fecha, hora, motivo, etc.)</div>
+              </div>
+            </div>
+            <div className="flex flex-col gap-3">
+              <Button className="cera-pro-black-btn bg-[#021D49] text-white" /*onClick={abrirModalCambiarCita}*/>
+                Cambiar fecha/hora de la cita
+              </Button>
+              <Button variant="outline" className="cera-pro-black-btn border-[#021D49] text-[#021D49]" /*onClick={cancelarCita}*/>
+                Cancelar cita
+              </Button>
+              <Button variant="ghost" className="mt-2 text-[#021D49] underline" onClick={() => signOut({ callbackUrl: "/" })}>
+                Cerrar sesión
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    );
   }
 
   return (
