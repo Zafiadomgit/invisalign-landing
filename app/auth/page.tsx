@@ -36,6 +36,9 @@ export default function AuthPage() {
   const router = useRouter();
   const { data: session, status } = useSession();
 
+  // Log de depuración para ver la sesión
+  console.log("session", session);
+
   // Redirigir a /admin si el usuario es admin
   useEffect(() => {
     if (session && session.user && (session.user as any).role === "admin") {
